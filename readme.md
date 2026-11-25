@@ -37,6 +37,8 @@ On Wayland the compositor, not the browser, decides where windows go, so the sna
 Hyprland Lua module, [`omarchy/pip-snap.lua`](omarchy/pip-snap.lua), not part of the
 extension. It works for any picture-in-picture window, whatever opened it.
 
+A new PiP window opens in the top-right corner of the browser window it came from, 16px in.
+
 Drag the PiP window (by itself, or with `Super` + drag) and let go: it moves to the nearest
 corner of the window it was dropped on, 16px in. Dropped where there's no window, it goes to
 the nearest corner of the screen. Clicks that don't move it (play, pause) leave it alone.
@@ -45,7 +47,7 @@ Install (needs Hyprland 0.56+ with Omarchy's Lua config):
 
 ```sh
 cp omarchy/pip-snap.lua ~/.config/hypr/pip-snap.lua
-echo 'require("hypr.pip-snap")' >> ~/.config/hypr/hyprland.lua
+echo 'require("hypr.pip-snap")' >> ~/.config/hypr/hyprland.lua  # or bindings.lua
 hyprctl reload && hyprctl configerrors
 ```
 
